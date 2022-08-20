@@ -53,4 +53,27 @@ document.getElementById('calculator').addEventListener('click', function(event){
         typeNumberField.value = newTypedNumber;
     }
       
+});
+
+document.getElementById('verify-pin').addEventListener('click', function(){
+    // console.log('verify pin clicked');
+
+    const displayPinField = document.getElementById('display-pin');
+    const currentPin = displayPinField.value;
+
+    const typeNumberField = document.getElementById('typed-numbers');
+    const typedNumber = typeNumberField.value;
+
+    const pinSuccessMessage = document.getElementById('pin-success');
+    const pinFailureMessage = document.getElementById('pin-failure');
+    if(typedNumber === currentPin){
+       
+       pinSuccessMessage.style.display = 'block';
+       pinFailureMessage.style.display = 'none';
+    }
+    else{
+       
+        pinFailureMessage.style.display = 'block';
+        pinSuccessMessage.style.display = 'none';
+    }
 })
